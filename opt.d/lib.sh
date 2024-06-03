@@ -1,8 +1,7 @@
 #!/bin/sh -x
 
 MAKE=make
-keyserver="keyserver.ubuntu.com" # standard
-keyserver2="keys.openpgp.org" #pgp keys
+keyserver="keys.openpgp.org" # update keyserver
 
 CustomiseVars() {
     install_dir=$opt_dir/$tool.d
