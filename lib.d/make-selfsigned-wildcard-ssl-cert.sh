@@ -129,12 +129,11 @@ $OPENSSL req \
 
 rm $ssl_config
 
-if $OPENSSL x509 -in $certfile -noout -text | grep -i signature | grep -vi sha256 ; then
+if $OPENSSL x509 -in $certfile -noout -text | grep -i signature | grep -vi sha256 >/dev/null ; then
     (
         echo $this: WARNING: the cert is not signed with SHA256
         echo $this: this is not fatal, but worth checking
         echo $this: perhaps your OpenSSL needs upgrading
-        cat $check
     ) 1>&2
 fi
 
