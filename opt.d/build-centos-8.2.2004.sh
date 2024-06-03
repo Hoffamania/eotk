@@ -8,15 +8,15 @@ opt_dir=`pwd`
 # platform dependencies
 shared_deps="
 curl
+dirmngr
 gcc
 libevent-devel
 openssl-devel
 pcre-devel
 "
 # i wonder if i need to pare this down to something more minimalist?
-sudo yum -y install dirmngr
 sudo yum -y groupinstall 'Development Tools'
-sudo yum -y install --skip-broken $shared_deps || exit 1
+sudo yum -y install --best --allowerasing $shared_deps || exit 1
 
 # build openresty
 SetupOpenRestyVars || exit 1
