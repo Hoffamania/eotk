@@ -14,6 +14,7 @@ openssl-devel
 pcre-devel
 "
 # i wonder if i need to pare this down to something more minimalist?
+sudo yum -y install dirmngr
 sudo yum -y groupinstall 'Development Tools'
 sudo yum -y install --skip-broken $shared_deps || exit 1
 
