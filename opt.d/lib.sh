@@ -1,7 +1,7 @@
 #!/bin/sh -x
 
 MAKE=make
-keyserver="keyserver.ubuntu.com" # standard
+keyserver="keys.openpgp.org" # update keyserver
 
 CustomiseVars() {
     install_dir=$opt_dir/$tool.d
@@ -60,8 +60,8 @@ ConfigureOpenResty() { # this accepts arguments
 
 SetupTorVars() {
     tool="tor"
-    tool_version="0.4.5.16"
-    tool_signing_keys="6AFEE6D49E92B601 C218525819F78451"
+    tool_version="0.4.5.15"
+    tool_signing_keys="EF6E286DDA85EA2A4BA7DE684E2C6E8793298290"
     tool_url="https://dist.torproject.org/$tool-$tool_version.tar.gz"
     tool_sig_url="https://dist.torproject.org/$tool-$tool_version.tar.gz.asc"
     tool_link_paths="bin/$tool"
